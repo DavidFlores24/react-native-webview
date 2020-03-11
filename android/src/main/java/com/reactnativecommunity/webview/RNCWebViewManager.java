@@ -79,6 +79,8 @@ import java.util.Map;
 
 import javax.annotation.Nullable;
 
+import st.suite.android.suitestinstrumentalservice.view.web.SuitestWebViewInstrumentation;
+
 /**
  * Manages instances of {@link WebView}
  * <p>
@@ -527,6 +529,14 @@ public class RNCWebViewManager extends SimpleViewManager<WebView> {
   public void setOnScroll(WebView view, boolean hasScrollEvent) {
     ((RNCWebView) view).setHasScrollEvent(hasScrollEvent);
   }
+
+  @ReactProp(name = "suitestEnabled") 
+  public void setSuitestEnabled(WebView view, boolean enabled) {
+    if (enabled) {
+      SuitestWebViewInstrumentation.instrument(view);
+    }
+  }
+  
 
   @Override
   protected void addEventEmitters(ThemedReactContext reactContext, WebView view) {
