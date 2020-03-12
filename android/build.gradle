@@ -117,6 +117,11 @@ repositories {
         "Ensure you have you installed React Native as a dependency in your project and try again."
     )
   }
+
+  flatDir {
+      dirs 'libs'
+  }
+
 }
 
 def kotlin_version = getExtOrDefault('kotlinVersion')
@@ -129,14 +134,4 @@ dependencies {
   debugImplementation 'com.android.support:appcompat-v7:25.2.0'
   debugImplementation 'com.google.code.gson:gson:2.8.0'
   debugImplementation(name:'SuitestIL', ext:'aar')
-  releaseImplementation(name:'SuitestILproduction', ext:'aar')
-}
-
-allprojects {
-  repositories {
-      jcenter()
-      flatDir {
-          dirs 'libs'
-      }
-  }
 }
