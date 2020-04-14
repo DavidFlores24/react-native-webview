@@ -28,7 +28,7 @@
   },
   "peerDependencies": {
     "react": "^16.9",
-    "react-native": ">=0.60 <0.62"
+    "react-native": "0.59.9"
   },
   "dependencies": {
     "escape-string-regexp": "2.0.0",
